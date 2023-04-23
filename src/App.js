@@ -1,21 +1,11 @@
 import React from "react";
-import Userinterface from "./UI/Userinterface";
-import * as firebase from "firebase/app";
-import "firebase/auth"
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBTfXvi1tVHKZcVR6xtXr9mxE2CpARRcqk",
-  authDomain: "noreply@expense-tracker-6d2aa.firebaseapp.com",
-  databaseURL: "https://expense-tracker-6d2aa-default-rtdb.firebaseio.com/",
-  projectId: "expense-tracker-6d2aa",
-};
-
-firebase.initializeApp(firebaseConfig);
+import SignUp from "./components/SignUp";
+import "./App.css";
 
 function App() {
   return (
-    <div>
-      <Userinterface/>
+    <div className="App">
+      <SignUp />
     </div>
   );
 }
