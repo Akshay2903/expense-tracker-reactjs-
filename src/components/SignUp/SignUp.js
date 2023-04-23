@@ -37,7 +37,7 @@ const SignUp = () => {
         console.log("Succcessfully Registered");
       } else {
         return res.json().then((data) => {
-          alert("datta.error.message");
+          alert("data.error.message");
         });
       }
     });
