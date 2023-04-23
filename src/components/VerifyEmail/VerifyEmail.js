@@ -1,0 +1,47 @@
+import React, { useRef } from 'react'
+
+const VerifyEmail = () => {
+    
+    const inputOTPRef = useRef();
+
+    const verifySubmitHandler = (event) => {
+        event.preventDefault();
+
+        const enteredOTP = inputOTPRef.current.value;
+
+        fetch(
+            "https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyDTHcN6BfHG9yJUF7SSWSe8c7ZWnwhUxOQ",
+            {
+              method: "POSt",
+              body: JSON.stringify({
+                oobCode: enteredOTP,
+              }),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          ).then((res) => {
+            if (res.ok) {
+              alert("Successfully verified");
+              return res.json();
+            } else {
+              return res.json().then((data) => {
+                alert(data.error.message);
+              });
+            }
+          });
+        };
+
+
+  return (
+    <div>
+      <form onSubmit={verifySubmitHandler}>
+        <label>Please enter OTP to verify Emaail</label>
+        <input type='text' id='verify'/>
+        <button type='submit'>Submit</button>
+      </form>
+    </div>
+  )
+}
+
+export default VerifyEmail;

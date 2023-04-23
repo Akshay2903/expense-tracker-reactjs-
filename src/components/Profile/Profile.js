@@ -23,6 +23,7 @@ const Profile = (props) => {
           displayName: enteredFullName,
           photoUrl: eneteredProfileUrl,
           returnSecureToken: true,
+          
         }),
         headers: {
           "Content-Type": "application/json",
@@ -31,6 +32,7 @@ const Profile = (props) => {
     ).then((res) => {
       if (res.ok) {
         alert("Profile Updated");
+        console.log(res,'//////////////')
         return res.json();
       } else {
         return res.json((data) => {
@@ -38,20 +40,23 @@ const Profile = (props) => {
           alert(data.error.message);
         });
       }
-    });
+    }).then(data=>{
+      console.log(data);
+    })
   };
   return (
     <div className="profile">
       <form className="form" onSubmit={profileUpdateHandler}>
         <h2>Contact Details</h2>
         <div>
-          <label>Full Name</label>
+          <label htmlFor='fullName'>FullName</label>
           <input type="text" id="fullname" required ref={fullNameRef} placeholder={props.inputName}/>
         </div>
         <div>
-          <label>Profile Photo URL</label>
-          <input type="text" id="profileURL" required ref={profileUrlRef} placeholder={props.inputUrl}/>
+          <label htmlFor="profileURL">Profile Photo URL</label>
+          <input type="text" id="profileURL" required ref={profileUrlRef} placeholder={props.inputURL} />
         </div>
+        <></>
         <div>
           <button type="submit" className="btn">
             Update
