@@ -1,0 +1,59 @@
+.loginBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-radius: 0.5rem;
+  }
+  
+  form h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+  }
+  
+  button.LoginBtn {
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  .tosignup {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .tosignup a {
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .tosignup a:hover {
+    text-decoration: underline;
+  }
+  

@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import "./SignUp.css";
+
 
 const SignUp = () => {
   const inputEmailRef = useRef();
@@ -75,6 +77,11 @@ const SignUp = () => {
         <div>
           <button className="signUpBtn">SignUp</button>
         </div>
+        <span className="tologin">
+          <p>
+            Already Registered? <Link to="/login">Login</Link>
+          </p>
+        </span>
       </form>
     </div>
   );
