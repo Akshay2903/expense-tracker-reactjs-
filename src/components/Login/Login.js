@@ -14,7 +14,7 @@ const Login = (props) => {
     const enteredloginPassword = loginPasswordRef.current.value;
 
     fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDTHcN6BfHG9yJUF7SSWSe8c7ZWnwhUxOQ",
+      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCEyT2fsRkG4dMvDlT-PAlCUi7vZzqHQ88",
       {
         method: "POST",
         body: JSON.stringify({
@@ -78,6 +78,9 @@ const Login = (props) => {
               Don't have Account? <Link to="/login">Sign Up</Link>
             </p>
           </span>
+        <div>
+        <Link to="/resetpasscode">ForgotPassword</Link>
+        </div>
       </form>
     </div>
   );

@@ -7,6 +7,7 @@ import Welcome from "./components/Welcome";
 import Header from "./components/Layout/Header";
 import Profile from "./components/Profile/Profile";
 import "./App.css";
+import PasscodeReset from "./components/Pages/CreatingPasscode/PasscodeReset";
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
         <Route exact path="/welcome" element = {<Welcome/>}/>
         <Route exact path="/login" element = {<Login setLogin = {setIsLogin}/>}/>
         <Route exact path="/completeprofile" element={<Profile/>} />
+        <Route exact path="/resetpasscode" element={<PasscodeReset />} />
       </Routes>
     </>
   );
