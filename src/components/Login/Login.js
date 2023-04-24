@@ -71,15 +71,19 @@ const Login = (props) => {
           />
         </div>
         <div>
-            <button className="LoginBtn">Login</button>
-          </div>
-          <span className="tosignup">
-            <p>
-              Don't have Account? <Link to="/login">Sign Up</Link>
-            </p>
-          </span>
+          <button type="submit" className="loginBtn">
+            Login
+          </button>
+        </div>
         <div>
-        <Link to="/resetpasscode">ForgotPassword</Link>
+          <Link to="/resetpasscode">
+            <p>Forgot Password</p>
+          </Link>
+        </div>
+        <div className="tosignup">
+          <p>
+            Create account Here! <Link to="/">SignUp</Link>
+          </p>
         </div>
       </form>
     </div>
