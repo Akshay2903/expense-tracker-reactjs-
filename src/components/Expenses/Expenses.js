@@ -14,6 +14,7 @@ const Expenses = () => {
   const [data, setData] = useState(null);
   const [premium, setPremium] = useState(false);
   const [primefeatures, setPrimefeatures] = useState(false);
+  const [deleted, setDeleted] = useState(false);
 
   const storedExpense = useSelector((state) => state.expense.expense);
   const TotalExpense = useSelector((state) => state.expense.totalexpense);
@@ -163,6 +164,7 @@ const Expenses = () => {
         setData(res.ok);
         dispatch(expenseActions.afterDeleteExpense(itemMoney));
         alert("Expense deleted");
+        setDeleted(true); 
         return res.json();
       } else {
         return res.json((data) => {
@@ -171,6 +173,12 @@ const Expenses = () => {
       }
     });
   };
+
+  useEffect(() => {
+    if (deleted) {
+      window.location.reload(); // Reload the page when deleted state is changed to true
+    }
+  }, [deleted]);
 
   ////Edit
   const editHandler = (editId) => {

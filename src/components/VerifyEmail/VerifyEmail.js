@@ -36,7 +36,7 @@ const VerifyEmail = () => {
   return (
     <div>
       <form onSubmit={verifySubmitHandler}>
-        <label>Please enter OTP to verify Emaail</label>
+        <label>Please enter OTP to verify Email</label>
         <input type='text' id='verify'/>
         <button type='submit'>Submit</button>
       </form>
